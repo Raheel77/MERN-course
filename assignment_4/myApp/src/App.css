@@ -1,0 +1,92 @@
+.hero{
+    padding: 100px 0;
+    background: url('./assets/img/bg-masthead.jpg') center bottom no-repeat;
+    background-size: cover;
+}
+
+img{
+    max-width: 100%;
+}
+h1{
+    margin-bottom: 50px;
+    max-width: 500px;
+    color: #fff;
+}
+
+
+.three-cards{
+    padding: 70px 0 ;
+    background: rgba(173, 216, 230, 0.1);
+}
+.card-custom img{
+    margin-bottom: 15px;
+}
+.card-custom {
+    width: 250px;
+    margin: 0 auto;
+    text-align:center
+}
+
+.content-area {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+    padding: 50px 80px;
+}
+.image-area{
+    max-height: 360px;
+    width: 100%;
+    object-fit: cover;
+}
+.zigzag-sections .col-6{
+    padding: 0;
+}
+
+
+
+
+footer {
+    padding: 20px 0;
+}
+
+footer p{
+    font-size: 13px;
+    color: gray;
+}
+footer h5 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    margin: 0px auto 0;
+    text-align: center;
+}
+.social-icons a {
+    font-size: 24px;
+    transition: color 0.3s ease;
+    margin: 10px;
+    color: #007bff;
+
+}
+
+.social-icons a:hover {
+    color: #002aff;
+}
+
+ul.list-unstyled {
+    display: flex;
+    gap : 15px;
+    margin-bottom: 0;
+
+}
+ul.list-unstyled li a {
+    color: cornflowerblue;
+    transition: color 0.3s ease;
+}
+
+ul.list-unstyled li a:hover {
+    color: #fff;
+    text-decoration: none;
+}
