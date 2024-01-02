@@ -1,12 +1,1 @@
-import Header from "./Components/Header"
-
-function App() {
-
-    return (
-        <>
-            <Header/>
-        </>
-    )
-}
-
-export default App
+import data from './data';import Header from "./Components/Header"import Hero from "./Components/Hero"import PremiumHome from "./Components/PremiumHome"import TheBest from "./Components/TheBest"import WinterDisc from "./Components/WinterDisc"import AllProd from "./Components/AllProd"import Footer from "./Components/Footer"const allSection = data.Sections;const Products = data.allProducts;function App() {  return (    <div>       <Header/>      <Hero {...allSection[0]} />      <PremiumHome {...allSection[1]} />      <TheBest {...allSection[2]} products={Products}/>      <WinterDisc {...allSection[3]} />      <AllProd {...allSection[4]} products={Products}/>      <Footer/>    </div>  )}export default App

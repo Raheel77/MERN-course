@@ -1,0 +1,97 @@
+{
+  "Sections": [
+    {
+      "section": "hero",
+      "discount": "30% off",
+      "title": "Comfort Chair",
+      "shortText": "Collect from Daxone & get 30% Discount.",
+      "image": "./images/hm1-single-1.png",
+      "cta": "Read More"
+    },
+    {
+      "section": "PremiumHome",
+      "title1": "Premium Home ",
+      "title2": "Decorator",
+      "image": "./images/banner-bg-1.webp",
+      "cta": "Learn More"
+    },
+    {
+      "section": "Best Sell",
+      "title": "Best Sell",
+      "shortText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      "image": "./images/banner-bg-1.webp"
+    },
+    {
+      "section": "Winter Discount",
+      "superTitle": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "title": "Winter Discount ",
+      "discount": "Up to 30%",
+      "shortText": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
+      "image": "./images/banner-1.jpg",
+      "cta": "Shop Now"
+    },
+    {
+      "section": "All Products",
+       "title": "All Products",
+      "shortText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text"
+    }
+  ],
+  "allProducts": [
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$280.00",
+      "woDiscountPrice": "$310.00",
+      "image": "./images/pro-hm1-1.jpg"
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$320.00",
+      "image": "./images/pro-hm1-2.jpg"
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$280.00",
+      "image": "./images/pro-hm1-3.jpg"
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$320.00",
+      "woDiscountPrice": "$350.00",
+      "image": "./images/pro-hm1-4.jpg"
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$250.00",
+      "best": true,
+      "image": "./images/pro-hm1-5.jpg"
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$200.00",
+      "woDiscountPrice": "$210.00",
+      "best": true,
+      "image": "./images/pro-hm1-6.jpg"
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$350.00",
+      "image": "./images/pro-hm1-7.jpg",
+      "best": true
+    },
+    {
+      "type": "chair",
+      "title": "Golden Easy Spot Chair",
+      "price": "$180.00",
+      "woDiscountPrice": "$210.00",
+      "image": "./images/pro-hm1-8.jpg",
+      "best": true
+    }
+  ]
+}
