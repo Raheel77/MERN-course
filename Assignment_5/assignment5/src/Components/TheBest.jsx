@@ -1,6 +1,5 @@
 const TheBest = (props) => {
   const {title, shortText, products} = props;
-  console.log(products);
   return (
     <div className="product-area pb-135">
       <div className="container">
@@ -13,15 +12,14 @@ const TheBest = (props) => {
             {
               products.map(function (allProducts) {
                 const {type, title, price, woDiscountPrice = '', image, best} = allProducts;
-
                 if (best) {
                   return (<div className="product-wrap col-3 p-3">
                       <div className="product-img mb-15">
-                        <a href="product-details.html"><img src={image} alt="product"/></a>
+                        <img src={image} alt="product"/>
                       </div>
                       <div className="product-content">
                         <span>{type}</span>
-                        <h4><a href="product-details.html">{title}</a></h4>
+                        <h4>{title}</h4>
                         <div className="price-addtocart">
 
                           <div className="product-price">
@@ -29,7 +27,7 @@ const TheBest = (props) => {
                           </div>
 
                           <div className="addtocart">
-                            <a title="Add To Cart" href="#">+ Add To Cart</a>
+                            <a title="Add To Cart" role={'button'}>+ Add To Cart</a>
                           </div>
                         </div>
                       </div>
