@@ -1,9 +1,9 @@
 import bg_image from "./images/hm1-bg-1.webp";
-import users from "./images/hm1-bg-1.webp";
-import prod from "./images/pro-hm1-1.jpg";
+import users from "./images/review.webp";
+
 
 const Single = (props) => {
-  const {discount, title, shortText, image, cta} = props;
+  const {title, image, model, price, type, woDiscountPrice} = props['data'];
   return (
     <>
       <div className="breadcrumb-area bg-img" style={{backgroundImage: `url(${bg_image})`}}>
@@ -24,13 +24,13 @@ const Single = (props) => {
           <div className="row">
             <div className="col-lg-6 col-md-6">
               <div className="product-details-img-left">
-                <img className="zoompro" src={prod} alt="product-details-img"/>
+                <img className="zoompro" src={image} alt="product-details-img"/>
               </div>
             </div>
             <div className="col-lg-6 col-md-6">
               <div className="product-details-content pro-details-content-modify">
                 <span>Life Style</span>
-                <h2>LaaVista Depro, FX 829 v1</h2>
+                <h2>{title}, {model}</h2>
                 <div className="product-ratting-review">
                   <div className="product-ratting">
                     <i className="la la-star"></i>
@@ -67,15 +67,14 @@ const Single = (props) => {
                 </div>
                 <div className="pro-details-price-wrap">
                   <div className="product-price">
-                    <span>$210.00</span>
-                    <span className="old">$230.00</span>
+                    <span>{price}</span><span className="old">{woDiscountPrice}</span>
                   </div>
                   <div className="dec-rang"><span>- 30%</span></div>
                 </div>
                 <div className="pro-details-quality">
                   <div className="cart-plus-minus">
                     <div className="dec qtybutton">-</div>
-                    <input className="cart-plus-minus-box" type="text" name="qtybutton" value="02"/>
+                    <input className="cart-plus-minus-box" type="text" name="qtybutton" value="01"/>
                     <div className="inc qtybutton">+</div>
                   </div>
                 </div>
@@ -123,7 +122,7 @@ const Single = (props) => {
                       <tbody>
                       <tr>
                         <td className="width1">Name / Model</td>
-                        <td>LaaVista Depro, FX 829 v1</td>
+                        <td>{title}, {model}</td>
                       </tr>
                       <tr>
                         <td>Type</td>
@@ -131,11 +130,11 @@ const Single = (props) => {
                       </tr>
                       <tr>
                         <td className="width1">Models</td>
-                        <td>FX 829 v1</td>
+                        <td>{model}</td>
                       </tr>
                       <tr>
                         <td className="width1">Categories</td>
-                        <td>Product Type</td>
+                        <td>{type}</td>
                       </tr>
                       <tr>
                         <td className="width1">Size</td>

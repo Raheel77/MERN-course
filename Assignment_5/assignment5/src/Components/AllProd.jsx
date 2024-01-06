@@ -12,14 +12,14 @@ const AllProd = (props) => {
         <div className="row">
           {
             products.map(function (productItem) {
-              const {type, title, price, woDiscountPrice = '', image,} = productItem;
+              const {type, title, price, woDiscountPrice = '', image} = productItem;
 
               const handleSomeEvent = () => {
                 onChildEvent(productItem);
               }
 
               return (
-                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6" onClick={handleSomeEvent}>
+                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6" style={{cursor:'pointer'}}  onClick={handleSomeEvent}>
                   <div className="product-wrap mb-35">
                     <div className="product-img mb-15">
                       <img src={image} alt="product"/>

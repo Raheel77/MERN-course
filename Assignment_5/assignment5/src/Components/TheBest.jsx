@@ -1,5 +1,5 @@
 const TheBest = (props) => {
-  const {title, shortText, products} = props;
+  const {title, shortText, products,onChildEvent} = props;
   return (
     <div className="product-area pb-135">
       <div className="container">
@@ -12,8 +12,13 @@ const TheBest = (props) => {
             {
               products.map(function (allProducts) {
                 const {type, title, price, woDiscountPrice = '', image, best} = allProducts;
+                const handleSomeEvent = () => {
+                  onChildEvent(allProducts);
+                }
+
+
                 if (best) {
-                  return (<div className="product-wrap col-3 p-3">
+                  return (<div className="product-wrap col-3 p-3 " style={{cursor:'pointer'}} onClick={handleSomeEvent}>
                       <div className="product-img mb-15">
                         <img src={image} alt="product"/>
                       </div>

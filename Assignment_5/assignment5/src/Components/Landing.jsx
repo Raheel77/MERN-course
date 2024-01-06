@@ -15,13 +15,13 @@ const Landing = (props) => {
 
   const handleChildEvent = (data) => {
     active(data);
-  };
+  }
 
   return (
     <>
       <Hero {...allSection[0]} />
       <PremiumHome {...allSection[1]} />
-      <TheBest {...allSection[2]} products={Products} />
+      <TheBest {...allSection[2]} products={Products} onChildEvent={handleChildEvent} />
       <WinterDisc {...allSection[3]} />
       <AllProd {...allSection[4]} products={Products} onChildEvent={handleChildEvent}/>
     </>
