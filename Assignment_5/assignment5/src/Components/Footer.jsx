@@ -26,10 +26,10 @@ const Footer = (props) => {
                                 </div>
                                 <div className="footer-list">
                                     <ul>
-                                        <li><a href="cart.html">Shopping Cat</a></li>
-                                        <li><a href="wishlist.html">WIshlist</a></li>
-                                        <li><a href="checkout.html">Chekout</a></li>
-                                        <li><a href="contact.html">Support</a></li>
+                                        <li><a href="#">Shopping Cat</a></li>
+                                        <li><a href="#">WIshlist</a></li>
+                                        <li><a href="#">Chekout</a></li>
+                                        <li><a href="#">Support</a></li>
                                     </ul>
                                 </div>
                             </div>
