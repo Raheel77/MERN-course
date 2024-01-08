@@ -2,8 +2,22 @@ import bg_image from "./images/hm1-bg-1.webp";
 import users from "./images/review.webp";
 
 
+
+
+
+
+
+
+
 const Single = (props) => {
-  const {title, image, model, price, type, woDiscountPrice} = props['data'];
+  const {title, image, model, price, type, woDiscountPrice ,onBackEvent } = props  ;
+
+  console.log('onBackEventonBackEvent',props);
+
+  const myBackHandle = () => {
+    onBackEvent(null);
+  };
+
   return (
     <>
       <div className="breadcrumb-area bg-img" style={{backgroundImage: `url(${bg_image})`}}>
@@ -89,7 +103,7 @@ const Single = (props) => {
                   </div>
                 </div>
                 <div className="pro-details-buy-now btn-hover btn-hover-radious">
-                  <a href="/#">Add To Cart</a>
+                  <a onClick={myBackHandle}>Add To Cart</a>
                 </div>
               </div>
             </div>

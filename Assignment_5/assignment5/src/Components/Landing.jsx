@@ -7,15 +7,18 @@ import AllProd from "../Components/AllProd"
 
 
 const Landing = (props) => {
-  const {data , active} = props;
+  const {data, active} = props;
 
 
   const allSection = data.Sections;
   const Products = data.allProducts;
 
   const handleChildEvent = (data) => {
+    console.log('data',data);
     active(data);
   }
+
+
 
   return (
     <>

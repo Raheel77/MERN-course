@@ -1,5 +1,5 @@
 const AllProd = (props) => {
-  const {title, shortText, products , onChildEvent} = props;
+  const {title, shortText, products, onChildEvent} = props;
 
 
   return (
@@ -11,15 +11,16 @@ const AllProd = (props) => {
         </div>
         <div className="row">
           {
-            products.map(function (productItem) {
+            products.map(function (productItem , index) {
               const {type, title, price, woDiscountPrice = '', image} = productItem;
 
               const handleSomeEvent = () => {
                 onChildEvent(productItem);
-              }
+              };
 
               return (
-                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6" style={{cursor:'pointer'}}  onClick={handleSomeEvent}>
+                <div className="col-xl-3 col-lg-4 col-md-6 col-sm-6" style={{cursor: 'pointer'}} key={index}
+                     onClick={handleSomeEvent}>
                   <div className="product-wrap mb-35">
                     <div className="product-img mb-15">
                       <img src={image} alt="product"/>
@@ -34,7 +35,7 @@ const AllProd = (props) => {
                         </div>
 
                         <div className="addtocart">
-                          <a title="Add To Cart" href="#">+ Add To Cart</a>
+                          <a title="Add To Cart" href="#" >+ Add To Cart</a>
                         </div>
                       </div>
                     </div>
