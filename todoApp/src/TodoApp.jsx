@@ -65,7 +65,7 @@ const TodoApp = () => {
               allTasks.map((currentItem, index) => (
                 <div className={'task-item'} key={index}>
                   <p><span> {currentItem.list} <span> {currentItem.details} </span> </span>
-                    <button onClick={() => editTask(index)}>Edit</button>
+                    <button className={'edit'} onClick={() => editTask(index)}>Edit</button>
                     <button onClick={() => removeTask(index)}>Remove</button>
                   </p>
                 </div>
