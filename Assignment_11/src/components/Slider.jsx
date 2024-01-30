@@ -1,44 +1,40 @@
-import React from 'react';
-import { Slider, Typography } from '@mui/material';
+import React, {useRef, useState} from 'react';
+import {Swiper, SwiperSlide} from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
+import {Grid, Pagination} from 'swiper/modules';
 
-const ProductSlider = () => {
-  const products = [
-    { id: 1, name: 'Product 1', imageUrl: 'https://i.imgur.com/Qphac99.jpeg' },
-    { id: 2, name: 'Product 2', imageUrl: 'https://i.imgur.com/Qphac99.jpeg' },
-    { id: 3, name: 'Product 3', imageUrl: 'https://i.imgur.com/Qphac99.jpeg' },
-    // Add more products as needed
-  ];
+
+import cat2 from '../assets/images/baner-right-image-01.jpg'
+import {Product_Card} from "./Product_Card";
+import {products_data} from "../utils/products_data";
+
+
+export default function Category() {
+  const [data, setData] = useState([...products_data]);
 
   return (
-    <div>
-      <Typography variant="h6" gutterBottom>
-        Featured Products
-      </Typography>
-      <Slider
-        aria-label="Product slider"
-        defaultValue={0}
-        step={1}
-        min={0}
-        max={products.length - 1}
-        marks
-        track="inverted"
-        style={{ width: '80%', margin: '0 auto' }}
-        onChange={(event, value) => {
-          // Handle slider value change if needed
+    <>
+      <Swiper
+        slidesPerView={5}
+        grid={{
+          rows: 1,
         }}
-      />
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        {products.map(product => (
-          <img
-            key={product.id}
-            src={product.imageUrl}
-            alt={product.name}
-            style={{ width: '200px', margin: '0 10px' }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+        spaceBetween={30}
+        pagination={{
+          clickable: true,
+        }}
+        modules={[Grid]}
+        className="mySwiper"
+      >
 
-export default ProductSlider;
+        {data.map((elem, ind) => {
+          return <SwiperSlide>
+            <Product_Card key={elem.id} data={elem}/>
+          </SwiperSlide>
+        })}
+      </Swiper>
+    </>
+  );
+}
