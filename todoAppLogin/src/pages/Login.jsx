@@ -1,8 +1,8 @@
-import { Stack, Paper, Typography, Button } from "@mui/material";
-import { Input_Component } from "../components/Input_Component";
-import { credentials_data } from "../utils/credentials_data";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import {Stack, Paper, Typography, Button} from "@mui/material";
+import {Input_Component} from "../components/Input_Component";
+import {credentials_data} from "../utils/credentials_data";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 const Login = () => {
   // let userdata = {}
@@ -11,17 +11,17 @@ const Login = () => {
   const navigate = useNavigate();
 
   const onChangeHandle = (e) => {
-    const { value, id } = e.target;
+    const {value, id} = e.target;
     // console.log(userData);
     // console.log(value, id);
 
-    setUserData({ ...userData, [id]: value });
+    setUserData({...userData, [id]: value});
     // ...
   };
 
   const submitHandle = (e) => {
     e.preventDefault();
-    const { username, password } = userData;
+    const {username, password} = userData;
     if (
       username === credentials_data.username &&
       password === credentials_data.password
@@ -38,11 +38,12 @@ const Login = () => {
   return (
     <Stack className="min-h-[100dvh] justify-center items-center">
       <div className="max-w-md">
+
         <Paper
           component="form"
           onSubmit={submitHandle}
           elevation={10}
-          sx={{ px: 2, py: 3 }}
+          sx={{px: 2, py: 3}}
         >
           <Typography align="center" fontWeight="bold" variant="h5">
             Login
@@ -66,7 +67,7 @@ const Login = () => {
           <Button
             // onClick={submitHandle}
             type="submit"
-            sx={{ width: "100%", mt: 2 }}
+            sx={{width: "100%", mt: 2}}
             variant="contained"
             color="success"
           >
@@ -74,9 +75,13 @@ const Login = () => {
           </Button>
           {/* </Stack> */}
         </Paper>
+        <br/>
+        <Paper>
+          <small>hints: username: admin, Password: 12345</small>
+        </Paper>
       </div>
     </Stack>
   );
 };
 
-export { Login };
+export {Login};
