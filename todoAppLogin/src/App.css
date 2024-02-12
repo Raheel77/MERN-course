@@ -12,14 +12,11 @@ body {
     justify-content: center;
     background-color: #050505;
     text-align: center;
-
 }
 
 body #root {
-    /*height: 100vh;*/
     padding: 50PX;
     color: #fff;
-
 }
 
 .iphone {
