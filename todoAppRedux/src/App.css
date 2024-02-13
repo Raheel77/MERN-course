@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+    font-family: Roboto;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #050505;
+    text-align: center;
+}
+
+body #root {
+    padding: 50PX;
+    color: #fff;
+}
+
+.iphone {
+    position: relative;
+    width: 375px; /* Width of iPhone 6/7/8 */
+    /*height: 550px; !* Height of iPhone 6/7/8 *!*/
+    /*min-height: 550px;*/
+    background-color: #3a5a40;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+    background-color: #264653;
+    position: relative;
+}
+
+.top-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #1c1c1c; /* iPhone's top bar color */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/*.camera-notch {
+  width: 150px;
+  height: 20px;
+  background-color: #22223b; !* iPhone's camera notch color *!
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0 0 50% 50%;
+  z-index: 1;
+}*/
+
+/* Customize the app content */
+.app-content:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px ;
+    background: #fff;
+    bottom: 100px;
+    left: 0;
+}
+.app-content h1{
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.app-content {
+    position: relative;
+    padding: 20px 20px 120px 20px ;
+    min-height: 590px;
+}
+
+/* Home button */
+.home-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background-color: #d9d9d9; /* iPhone's home button color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.home-button:before {
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: #1c1c1c; /* Color for the home button icon */
+    border-radius: 50%;
+}
+
+.input-container {
+    position: relative;
+
+}
+
+.all-task .task-item p span span{
+    display: block;
+    font-size:12px ;
+    font-weight: normal;
+}
+.all-task .task-item p > span {
+    padding: 5px;
+    font-size:14px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.all-task .task-item p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.all-task .task-item {
+    background: #f2f2f2;
+    border-radius: 5px;
+    margin: 0 0 4px 0;
+}
+
+.all-task .edit{
+    margin-left: auto;
+    background: #4caf50;
+}
+.all-task button {
+    border: none;
+    padding: 10px;
+    background-color: #dd4b39;
+    color: #fff;
+    border-radius:  5px;
+    margin: 0 2px;
+    cursor: pointer;
+}
+
+.all-task:empty {
+    display: none;
+}
+
+.all-task {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    color: #222;
+    margin-top: 15px;
+}
+
+.create-todo {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input-container input#list {
+    height: 46px;
+}
+
+.input-container input#details {
+    height: 66px;
+}
+
+.input-container input {
+    width: 265px;
+    padding: 20px 14px 10px 14px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+    color: #222222;
+    border-bottom: 1px solid rgba(73, 73, 73, 0.24);
+    outline: 0;
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 12px;
+    color: #aaa;
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+}
+
+.input-container input:focus + label,
+.input-container input:valid + label {
+    top: 5px;
+    font-size: 10px;
+    color: #000;
+
+}
+
+.create-todo > button{
+    position: absolute;
+    border: none;
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 10px;
+    bottom: 36px;
+    height: 120px;
+    font-size: 14px;
+    text-transform: uppercase ;
+}
+.create-todo{
+    position: relative;
+}
