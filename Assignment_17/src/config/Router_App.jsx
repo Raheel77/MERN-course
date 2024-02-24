@@ -4,19 +4,20 @@ import Login from "../pages/Login";
 import {Home} from "../pages/Home";
 import {Private_Routes} from "./Private_Routes";
 import User from "../pages/User";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
 
       <Route path="signup" element={<Signup/>}/>
       <Route path="login" element={<Login/>}/>
-      <Route path="" element={<Home/>}/>
-      <Route path="/products/:id" element={<User/>}/>
 
 
       {/* Private Route */}
-      {/* <Route element={<Private_Routes />}>
-            </Route> */}
+      <Route element={<Private_Routes/>}>
+        <Route path="" element={<Home/>}/>
+        <Route path="/products/:id" element={<User/>}/>
+      </Route>
     </Route>
   )
 )

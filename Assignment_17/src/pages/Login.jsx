@@ -14,7 +14,7 @@ const Login = () => {
 
   const user_data = useSelector((a) => a.user_data)
 
-  console.log(user_data)
+  // console.log(user_data)
 
   const dispatch = useDispatch();
   const navigate = useNavigate();

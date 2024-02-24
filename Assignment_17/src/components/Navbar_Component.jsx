@@ -45,7 +45,7 @@ const Navbar_Component = () => {
     }
   });
 
-  console.log(userLoginDetails);
+  // console.log(userLoginDetails);
   return (
     <div className="bg-primary_color h-20 px-3 flex items-center justify-between">
       <div className="text-3xl text-white font-bold">Logo</div>
