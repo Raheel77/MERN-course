@@ -33,7 +33,7 @@
     23. Checkout style
     24. Compare style
     25. My account style
-    26. About us style
+    26. Login us style
 
 -----------------------------------------------------------------------------------*/
 /*----------------------------------------*/
@@ -13791,7 +13791,7 @@ h3.cart-page-title {
   }
 }
 
-/*------- 22. Contact us style  -------*/
+/*------- 22. Signup us style  -------*/
 .contact-info-wrap h3, .get-in-touch-wrap h3 {
   text-transform: capitalize;
   font-size: 25px;
@@ -14685,7 +14685,7 @@ h3.cart-page-title {
 }
 
 /*-------- Start My Account Page Wrapper --------*/
-/*-------- 26. About us style ---------*/
+/*-------- 26. Login us style ---------*/
 @media only screen and (max-width: 767px) {
   .about-us-content {
     margin-top: 30px;

@@ -27,6 +27,8 @@ const Navbar_Component = () => {
 
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      dispatch(set_user_auth(true));
+
       // User is signed in
       const uid = user.uid;
       const email = user.email;
@@ -40,7 +42,9 @@ const Navbar_Component = () => {
         email: email,
         photoURL: photoURL,
       })
+      console.log("User is signed in.");
     } else {
+      dispatch(set_user_auth(false));
       console.log("No user signed in.");
     }
   });

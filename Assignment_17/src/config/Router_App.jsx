@@ -12,7 +12,6 @@ const router = createBrowserRouter(
       <Route path="signup" element={<Signup/>}/>
       <Route path="login" element={<Login/>}/>
 
-
       {/* Private Route */}
       <Route element={<Private_Routes/>}>
         <Route path="" element={<Home/>}/>

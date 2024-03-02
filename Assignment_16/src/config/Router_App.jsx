@@ -20,10 +20,10 @@ const router = createBrowserRouter(
 
       {/* Private Route */}
       {/* <Route element={<Private_Routes />}>
-            </Route> */}
+          </Route> */}
     </Route>
   )
-);
+)
 
 const Router_App = () => {
   return <RouterProvider router={router} />;

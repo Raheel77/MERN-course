@@ -1,43 +1,48 @@
-import React, {useState} from "react";
+import { useState, useEffect } from "react";
 import {Navigate, Outlet} from 'react-router-dom'
 import {onAuthStateChanged, signOut} from 'firebase/auth'
 import {auth} from '../config/firebase-config'
 import {set_user_auth} from "../store/slices/user_data_slice";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-const user = true;
+const user = false;
 const Private_Routes = () => {
+  const dispatch = useDispatch();
+  const [loginCheck, setLoginCheck] = useState(false);
+  const user_data = useSelector((current) => current.user_data);
 
-  const [loginhere, setLoginhere] = useState(true);
-  const user_data = useSelector((a) => a);
+  useEffect(() => {
+/*    if ( user_data.user_data.isLoggedIn) {
+      setLoginCheck(true);
+    }else{
+      setLoginCheck(false);
+    }*/
 
-  const check_user = async () => {
-    try {
-      const user = await new Promise((resolve, reject) => {
-        onAuthStateChanged(auth, resolve, reject);
-      });
 
+    onAuthStateChanged(auth, (user) => {
       if (user) {
-        // User is signed in
-        setLoginhere(true);
-        console.log('User is signed in');
+        dispatch(set_user_auth(true));
+         console.log("User is Signed in.");
       } else {
-        // User is signed out
-        setLoginhere(false);
-        console.log('User is signed out');
+        dispatch(set_user_auth(false));
+        console.log("No user signed in.");
       }
-    } catch (error) {
-      console.error('Error checking user:', error);
+    });
+
+
+    if (user_data.user_data.isLoggedIn) {
+      setLoginCheck(true);
+    } else {
+      setLoginCheck(false);
     }
-  };
 
-// Assuming user_data contains the fetched user data
-  if (user_data && user_data.user_data.isLoggedIn) {
-    check_user(); // Call check_user function to update loginhere
-  }
+  },[]);
 
+
+  console.log("User's data",user_data);
+  console.log('check login',loginCheck);
   return (
-    user ? <Outlet/> : <Navigate to='/login'/>
+    loginCheck ? <Outlet/> : <Navigate to='/login'/>
   )
 }
 
