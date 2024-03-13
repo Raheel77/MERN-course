@@ -27,7 +27,7 @@ function Navbar(props) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const user_auth_state = useSelector((state) => state.user_auth);
-console.log(user_auth_state);
+// console.log(user_auth_state);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };

@@ -21,6 +21,7 @@ import {Profile} from "../../pages/Profile";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
+
     <Route element={<Layout />}>
       {/*<Route path="profile" element={<Profile />} />*/}
 
@@ -30,8 +31,8 @@ const router = createBrowserRouter(
       </Route>
 
       <Route element={<Private_Routes_Seller />}>
-          <Route path="" element={<Home />} />
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/" element={<Home />} />
+          <Route path="profile" element={<Profile />} />
       </Route>
     </Route>
   )

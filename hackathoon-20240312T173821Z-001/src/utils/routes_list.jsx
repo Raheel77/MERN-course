@@ -4,7 +4,7 @@ export const navItems = [
   {
     label: "Home",
     link: "/",
-    both: true,
+    auth_required: true,
   },
   {
     label: "Login",
@@ -15,6 +15,11 @@ export const navItems = [
     label: "Signup",
     link: "/signup",
     auth_required: false,
+  },
+  {
+    label: "Profile",
+    link: "/profile",
+    auth_required: true,
   },
 /*
   {

@@ -5,8 +5,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import {database} from "../config/firebase/index";
 import {child, onValue, push, ref, set, update} from "firebase/database";
-
-
 import {Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper} from '@mui/material';
 
 
@@ -21,7 +19,6 @@ export const Home = () => {
             const convert_to_array = Object.values(data);
             setdonorsData(convert_to_array);
 
-            // console.log('donnors_data', donorsData);
         });
 
     }, []);
@@ -30,7 +27,7 @@ export const Home = () => {
     return <>
 
         <br/><br/><br/><br/><br/>
-        <Typography variant="h2" gutterBottom>
+        <Typography variant="h4" gutterBottom>
             All Users Data
         </Typography>
 
