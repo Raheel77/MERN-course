@@ -18,15 +18,12 @@ export const Home = () => {
       const data = snapshot.val();
       const convert_to_array = Object.values(data);
       setdonorsData(convert_to_array);
-
     });
 
   }, []);
 
 
-  return <Container maxWidth="lg">
-
-    <br/><br/><br/><br/><br/>
+  return <Container maxWidth="lg" className={'pt-24'}>
     <Typography variant="h4" gutterBottom>
       All Users Data
     </Typography>
@@ -42,8 +39,8 @@ export const Home = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {donorsData.map((current) => (
-            <TableRow key={current.id}>
+          {donorsData.map((current,index) => (
+            <TableRow key={index}>
               <TableCell>{current.first_name}</TableCell>
               <TableCell>{current.last_name}</TableCell>
               <TableCell>{current.email}</TableCell>

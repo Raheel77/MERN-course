@@ -18,16 +18,17 @@ import { navItems } from "../utils/routes_list";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 
+import {auth} from "../config/firebase/index";
+
 const drawerWidth = 240;
 
 function Navbar(props) {
   const navigate = useNavigate();
+  const user_auth_state = useSelector((state) => state.user_auth);
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
-  const user_auth_state = useSelector((state) => state.user_auth);
-// console.log(user_auth_state);
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -39,20 +40,27 @@ function Navbar(props) {
       </Typography>
       <Divider />
       <List>
+
         {navItems.map((item, index) => {
           const { both, auth_required } = item;
           return both === true || auth_required === user_auth_state.user_auth ? (
             <ListItem key={index} disablePadding>
-              <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemButton sx={{ textAlign: "center" }} onClick={()=>{
+                navigate(item.link);
+              }}>
                 <ListItemText primary={item.label} />
               </ListItemButton>
+
             </ListItem>
           ) : null;
         })}
       </List>
     </Box>
   );
-
+  const logut = ()=>{
+    auth.signOut();
+  }
+  console.log('Users',user_auth_state.user_auth);
   const container =
     window !== undefined ? () => window().document.body : undefined;
 
@@ -88,6 +96,14 @@ function Navbar(props) {
                 </Button>
               ) : null;
             })}
+
+            {user_auth_state.user_auth &&
+            <Button sx={{color: "#fff"}} onClick={() => logut()}>
+              Logout
+            </Button>
+            }
+
+
           </Box>
         </Toolbar>
       </AppBar>

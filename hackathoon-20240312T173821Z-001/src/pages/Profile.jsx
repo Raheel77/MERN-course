@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 // import {database} from "../config/firebase";
-
-
 import {onAuthStateChanged} from "firebase/auth";
 import Typography from '@mui/material/Typography';
 
@@ -16,8 +14,7 @@ export const Profile = () => {
 
   const [donorsData, setdonorsData] = useState([]);
   const [user, setUser] = useState([]);
-  const user_auth_state = useSelector((state) => state.user_auth);
-
+  // const user_auth_state = useSelector((state) => state.user_auth);
 
   useEffect(() => {
     const database_ref = ref(database, "users/");
@@ -26,12 +23,10 @@ export const Profile = () => {
       const convert_to_array = Object.values(data);
       setdonorsData(convert_to_array);
     });
-
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
       } else {
-
       }
     });
 
@@ -45,18 +40,14 @@ export const Profile = () => {
   // console.log('result', result);
 
 
-  return <Container maxWidth="lg">
+  return <Container maxWidth="lg" className={'pt-24'}>
 
-    <br/><br/><br/><br/><br/>
     <Typography variant="h4" gutterBottom>
       User Profile
     </Typography>
-
     <TableContainer component={Paper}>
       <Table>
         {result.map((current) => {
-
-
             let relatedBPGroups = '';
             if (current.blood_type === 'O+' || current.blood_type === 'O-') {
               relatedBPGroups = 'O, A, B, AB'
