@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import {auth, database} from "../config/firebase/index";
 import {child, onValue, push, ref, set, update} from "firebase/database";
 import {set_user_auth} from "../store/slices/user_auth_slice";
-import {Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
+import {Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow} from "@mui/material";
 // import Typography from "./Home";
 
 export const Profile = () => {
@@ -40,12 +40,13 @@ export const Profile = () => {
   const result = donorsData.filter((current) => current.email === user.email);
 
 
-  console.log('User', user.email);
-  console.log('donorsData', donorsData);
-  console.log('result', result);
+  // console.log('User', user.email);
+  // console.log('donorsData', donorsData);
+  // console.log('result', result);
 
 
-  return <div>
+  return <Container maxWidth="lg">
+
     <br/><br/><br/><br/><br/>
     <Typography variant="h4" gutterBottom>
       User Profile
@@ -94,7 +95,5 @@ export const Profile = () => {
         )}
       </Table>
     </TableContainer>
-
-
-  </div>;
+  </Container>
 };
